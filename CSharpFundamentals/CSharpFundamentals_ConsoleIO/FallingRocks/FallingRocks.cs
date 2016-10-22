@@ -7,6 +7,13 @@ namespace FallingRocks
 {
     class FallingRocks
     {
+        static void DrawPlayer(int locationX, int locationY, char player)
+        {
+            Console.Clear();
+            Console.SetCursorPosition(locationX, locationY);
+            Console.Write(player);
+        }
+
         static void Main()
         {
             // define the variables
@@ -21,17 +28,14 @@ namespace FallingRocks
             // console settings
             Console.Title = "Falling Rocks by D Dimov";
             Console.BackgroundColor = ConsoleColor.DarkGray;
-            Console.Clear();
             Console.OutputEncoding = Encoding.Unicode;
             Console.ForegroundColor = ConsoleColor.DarkBlue;
             Console.CursorVisible = false;
             Console.BufferHeight = Console.WindowHeight = windowHeight;
             Console.BufferWidth = Console.WindowWidth = windowWidth;
-
-            // initialize the player at the default position
-            Console.SetCursorPosition(locationX, locationY);
-            Console.Write(player);
             
+            DrawPlayer(27, 24, (char)'ʘ');
+
             ConsoleKeyInfo keyInfo;
             while ((keyInfo = Console.ReadKey(true)).Key != ConsoleKey.Escape && gameRunning == true)
             {
@@ -67,17 +71,13 @@ namespace FallingRocks
                         }
                         break;
                 }
-                // Draw the player after each key stroke (movement)
-                Console.Clear();
-                Console.SetCursorPosition(locationX, locationY);
-                Console.Write(player);
-
-                Thread.Sleep(150);
+                DrawPlayer(locationX, locationY, player);
             }
 
             // final screen after game ends
             stopWatch.Stop();
             TimeSpan ts = stopWatch.Elapsed;
+            Console.Clear();
             Console.WriteLine("");
             Console.WriteLine("Time survived: " + ts);
             Console.WriteLine("");
