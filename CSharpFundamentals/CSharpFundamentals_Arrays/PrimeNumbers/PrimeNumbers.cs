@@ -1,39 +1,37 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace PrimeNumbers
-{ 
-    // TODO: FIX! Not working!
-    class PrimeNumbers
+namespace Arrays
+{
+    class Prime_Numbers
     {
-        static void Main()
+        static void Main(string[] args)
         {
             int N = int.Parse(Console.ReadLine());
-            bool[] primes = new bool[N]; 
+            bool[] A = new bool[N + 1];
+            A = Enumerable.Repeat(true, N + 1).ToArray();
 
-            // Find all prime numbers to N
-            for (int i = 2; i < Math.Sqrt(primes.Length); i++)
+            for (int i = 2; i < Math.Sqrt(N); i++)
             {
-                // Skip the ones which are not prime
-                if (primes[i] == false)
+                if (A[i] == true)
                 {
-                    for (int j = i * i; j < primes.Length; j += i)
-                        primes[j] = true;
+                    for (int j = i * i; j <= N; j += i)
+                    {
+                        A[j] = false;
+                    }
+                }
+            }
+            for (int i = N; i >= 2; i--)
+            {
+                if (A[i] == true)
+                {
+                    Console.WriteLine(i); break;
                 }
             }
 
-            // Print max prime number
-            for (int i = primes.Length - 1; i > 2; i--)
-            {
-                if (primes[i])
-                {
-                    Console.WriteLine(i);
-                    break;
-                }
-                else
-                {
-                    continue;
-                }
-            }
         }
     }
 }
