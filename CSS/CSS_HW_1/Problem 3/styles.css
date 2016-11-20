@@ -1,0 +1,78 @@
+body {
+    background-color: #A9A9A9;
+}
+h1 {
+    color: #FAFAD2;
+    font-size: 26px;
+}
+h1.top {
+    color: #FAFAD2;
+    font-size: 48px;
+    text-align: center;
+}
+nav {
+    font-size: 22px;
+    text-align: center;
+}
+ul {
+  list-style-type: none;
+}
+a:link {
+    text-decoration: none;
+    color: #F8FDFF;
+}
+a:visited {
+    text-decoration: none;
+    color: #F8FDFF;
+}
+a:hover {
+    text-decoration: none;
+    color: #F8FDFF;
+}
+a:active {
+    text-decoration: none;
+    color: #F8FDFF;
+}
+a:link.second {
+    text-decoration: none;
+    color: #F8FDFF;
+    background-color: #D3D3D3;
+}
+a:visited.second {
+    text-decoration: none;
+    color: #F8FDFF;
+    background-color: #D3D3D3;
+}
+a:hover.second {
+    text-decoration: none;
+    color: #F8FDFF;
+    background-color: #D3D3D3;
+}
+a:active.second {
+    text-decoration: none;
+    color: #F8FDFF;
+    background-color: #D3D3D3;
+}
+a:link.fourth {
+    text-decoration: underline;
+    color: #F8FDFF;
+}
+a:visited.fourth {
+    text-decoration: underline;
+    color: #F8FDFF;
+}
+a:hover.fourth {
+    text-decoration: underline;
+    color: #F8FDFF;
+}
+a:active.fourth {
+    text-decoration: underline;
+    color: #F8FDFF;
+}
+footer {
+    font-size: 13px;
+}
+footer.last {
+    font-size: 18px;
+    text-align: center;
+}
