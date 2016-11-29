@@ -1,0 +1,16 @@
+@font-face {
+   font-family: "Edwardian";
+  src: url("edwardian.ttf"); 
+}
+@font-face {
+   font-family: "Consolas";
+  src: url("consolas.ttf"); 
+}
+p {
+    font-family: Consolas;
+    color: #0094ff;
+}
+p:first-letter {
+    font-family: Edwardian;
+    font-size: 50px;
+}
