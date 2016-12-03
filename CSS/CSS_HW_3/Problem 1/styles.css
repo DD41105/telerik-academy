@@ -1,0 +1,27 @@
+#wrap {
+    width: 200px;
+    font-size: 16px;
+}
+
+ul {
+    list-style: none;
+}
+
+.hide {
+    display: none;
+}
+
+.list:hover .hide {
+    display: block;
+}
+
+.hs:hover {
+    color: lightgray;
+    text-decoration: underline;
+}
+
+body nav div ul li ul li a {
+    margin-left: -25px;
+    color: #a5a4a4;
+    text-decoration: none;
+}

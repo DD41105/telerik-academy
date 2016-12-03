@@ -1,0 +1,70 @@
+html, body, div, span,h1, a, section, header, p, form, img {
+	margin: 0;
+	padding: 0;
+}
+
+#wrapper {
+  width: 51%;
+  margin: 5px;
+  padding: 5px;
+  border: 0;
+  font-size: 16px;
+}
+
+body div header div:first-of-type {
+	background-color: #3B3B3B;
+    border-radius: 10px 10px 0px 0px;
+	box-shadow: inset -5px -15px 15px -10px rgba(38,38,38,1) ;
+}
+
+img, p, form {
+  display: inline;
+  vertical-align: middle;
+  padding: 10px;
+}
+
+input {
+  margin: 10px;
+}
+
+input[type=text], input[type=email] {
+  width: 20%;
+}
+
+input[type=submit] {
+  width: 55px;
+  height: 30px;
+  border-radius: 10px;
+  border: 1px solid white;
+  background-color: red;
+  color: white;
+  outline: none;
+}
+
+header div p {
+  font-size: 1.5em;
+  color: white;
+}
+
+section div {
+  background-color: #3B3B3B;
+  border-radius: 0px 0px 10px 10px;
+  padding: 20px;
+}
+
+h1 {
+  color: #F7D51B;
+  font-size: 2em;
+  font-weight: normal;
+  padding-bottom: 20px;
+}
+
+section div p {
+  color: darkgrey;
+  font-family: "Times New Roman";
+  padding-left: 0;
+}
+
+span {
+  color: white;
+}
