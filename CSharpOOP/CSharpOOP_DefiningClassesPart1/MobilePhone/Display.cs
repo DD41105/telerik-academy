@@ -1,8 +1,9 @@
 ﻿using System;
+using System.Text;
 
 namespace MobilePhone
 {
-    class Display
+    public class Display
     {
         private double displaySize;
         private double numOfColors;
@@ -40,6 +41,13 @@ namespace MobilePhone
         public Display(double displaySize)
         {
             this.DisplaySize = displaySize;
+        }
+
+        public override string ToString()
+        {
+            StringBuilder builder = new StringBuilder();
+            builder.Append("Display size: ").Append(this.displaySize).Append("\r\n");
+            return builder.ToString();
         }
     }
 }

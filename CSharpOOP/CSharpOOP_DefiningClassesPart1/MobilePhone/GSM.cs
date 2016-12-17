@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Text;
+using System.Collections.Generic;
 
 namespace MobilePhone
 {
-    class GSM
+    public class GSM
     {
         private string model;
         private string manufacturer;
@@ -11,6 +12,7 @@ namespace MobilePhone
         private string owner;
         private Battery phonesBattery;
         private Display phonesDisplay;
+        private List<Call> callsHistory;
 
         public static readonly GSM IPhone4S = new GSM("iPhone 4S", "Apple", 500, "Unknown owner", new Battery(BatteryType.LiIon), new Display(3.5));
 
@@ -97,10 +99,23 @@ namespace MobilePhone
             }
         }
 
+        public List<Call> CallsHistory
+        {
+            get
+            {
+                return this.callsHistory;
+            }
+            set
+            {
+                this.callsHistory = value;
+            }
+        }
+
         public GSM(string model, string manufacturer)
         {
             this.Model = model;
             this.Manufacturer = manufacturer;
+            this.CallsHistory = new List<Call>();
         }
 
         public GSM(string model, string manufacturer, Battery batteryInfo, Display displayInfo)
@@ -140,10 +155,49 @@ namespace MobilePhone
             }
             else
             {
-                sb.Append("\r\n").Append("Currently the phone's display is not working.");
+                sb.Append("\r\n").Append("Currently the phone's display is not working.").Append("\r\n");
             }
 
             return sb.ToString();
+        }
+
+        public void AddACall(Call currentCall)
+        {
+            this.CallsHistory.Add(currentCall);
+        }
+
+        public void DeleteACall(Call currentCall)
+        {
+            this.CallsHistory.Remove(currentCall);
+        }
+
+        public void ClearCallsHistory()
+        {
+            this.CallsHistory.Clear();
+        }
+
+        public void PrintCallHistory()
+        {
+            foreach (var call in this.CallsHistory)
+            {
+                Console.WriteLine(call);
+            }
+        }
+
+        public void ClearCallHistory()
+        {
+            this.CallsHistory.Clear();
+        }
+
+        public void CalculateTotalPriceOfCalls(double pricePerMinute)
+        {
+            double totalSum = 0;
+            for (int i = 0; i < this.callsHistory.Count; i++)
+            {
+                totalSum += (this.CallsHistory[i].callDuration / 60) * pricePerMinute;
+            }
+
+            Console.WriteLine("Total sum is {0:F2} leva", totalSum);
         }
     }
 }

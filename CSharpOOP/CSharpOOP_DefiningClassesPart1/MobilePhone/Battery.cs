@@ -1,8 +1,9 @@
 ﻿using System;
+using System.Text;
 
 namespace MobilePhone
 {
-    class Battery
+    public class Battery
     {
         private string model;
         private double hoursIdle;
@@ -81,6 +82,13 @@ namespace MobilePhone
         {
             this.Model = model;
             this.HoursIdle = hoursIdle;
+        }
+
+        public override string ToString()
+        {
+            StringBuilder builder = new StringBuilder();
+            builder.Append("Battery type: ").Append(this.batteryType);
+            return builder.ToString();
         }
     }
 }
