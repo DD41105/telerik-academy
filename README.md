@@ -1,2 +1,2 @@
-# TelerikAcademyCourses
-My homeworks for the Telerik Academy.
+# telerik-academy
+Homeworks and other stuff for the Telerik Academy.
